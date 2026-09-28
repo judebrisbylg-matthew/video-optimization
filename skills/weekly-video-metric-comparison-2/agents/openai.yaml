@@ -1,0 +1,4 @@
+interface:
+  display_name: "周度视频视觉分析"
+  short_description: "补齐视频指标诊断、执行结论与视觉分析"
+  default_prompt: "使用 $weekly-video-metric-comparison-2 按实际表头为第一张工作表补齐空白或按本次要求修订分析内容，结合运营原因与截图，保留非目标内容及指定保留条目。"
