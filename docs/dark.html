@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>每周视频复盘 · Skill 工作流程</title><link rel="icon" href="data:,">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;--bg:#f5f3ed;--paper:#fffefa;--ink:#242d27;--muted:#5b665d;--line:#d6dbd1;--accent:#335f46;--soft:#e9eee5;--warn:#8b5523}
+body[data-theme="blue"]{--bg:#f0f4f8;--paper:#fff;--ink:#203246;--muted:#50667c;--line:#ced9e5;--accent:#285b92;--soft:#e5edf7;--warn:#8b5523}
+body[data-theme="dark"]{--bg:#242825;--paper:#303632;--ink:#f0eee4;--muted:#c2c8c0;--line:#535c55;--accent:#c7d9ac;--soft:#3b463b;--warn:#f1c18b}
+a{color:inherit}button,select{font:inherit}button,a,select{touch-action:manipulation}button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.shell{max-width:1220px;margin:auto;padding:30px 42px 64px}.top{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:20px}.label{font-size:12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}.styles{display:flex;gap:6px;flex-wrap:wrap}.styles a{font-size:13px;text-decoration:none;border:1px solid var(--line);padding:6px 12px}.styles a[aria-current]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+header{padding:45px 0 30px;display:grid;grid-template-columns:1.2fr 1fr;gap:38px;align-items:end}h1{font:500 42px/1.25 "Songti SC","STSong",serif;margin:12px 0 16px}h2{font-size:24px;font-weight:500;margin:0}h3{font-size:17px;margin:0 0 8px}p{margin:0 0 12px}.intro{color:var(--muted)}.promise{border-top:3px solid var(--accent);padding-top:18px}.promise strong{font-size:20px;font-weight:500}.promise p{color:var(--muted);margin-top:8px;font-size:14px}
+nav{display:flex;gap:26px;flex-wrap:wrap;padding:14px 0;border-block:1px solid var(--line);margin-bottom:38px}nav a{text-decoration:none;font-size:14px}section{margin-bottom:48px}.section-head{display:flex;gap:20px;justify-content:space-between;align-items:baseline;margin-bottom:20px}.section-head small{color:var(--muted);font-size:13px}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}.step{position:relative;border-top:1px solid var(--line);padding-top:17px}.step:not(:last-child):after{content:'→';position:absolute;right:-17px;top:49px;color:var(--muted)}.n{font:500 26px Georgia,serif;color:var(--accent);display:block;margin-bottom:12px}.step p{font-size:14px;color:var(--muted)}.tag{display:inline-block;background:var(--soft);font-size:12px;padding:3px 8px;margin-top:5px}.role{color:var(--accent);font-size:12px}
+.split{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:var(--paper)}.split article{padding:24px}.split article+article{border-left:1px solid var(--line)}code{font-size:13px;overflow-wrap:anywhere;color:var(--muted)}ul{padding-left:20px;margin:12px 0 0}li{margin:7px 0}.gate{display:grid;grid-template-columns:1.1fr 2fr;gap:30px;padding:26px;background:var(--soft)}select{width:100%;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:12px;margin-top:12px}.result{padding-left:28px;border-left:1px solid var(--line)}.result h3{color:var(--accent);font-size:21px}.result p{font-size:15px}.flow-line{font-size:14px;color:var(--muted);padding:15px 0}.four{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}.cell{background:var(--paper);padding:23px}.cell small{color:var(--muted);font-size:13px}.example{border-top:1px solid var(--line);margin-top:15px;padding-top:15px;font-size:15px;white-space:pre-line}.col{font-size:12px;color:var(--accent);letter-spacing:1px}.examples-label{font-size:13px;color:var(--muted);margin-top:12px}
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.checks article{border-top:2px solid var(--line);padding-top:16px}.checks p{font-size:14px;color:var(--muted)}details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointer;font-weight:500}details p{margin:12px 0 0;color:var(--muted);font-size:14px}.note{font-size:14px;color:var(--warn);padding:15px 0}.source{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:20px}.source p{margin:4px 0}footer{display:flex;justify-content:space-between;gap:20px;font-size:13px;color:var(--muted);margin-top:30px}
+@media(max-width:800px){.shell{padding:22px}header{grid-template-columns:1fr;gap:10px;padding-top:30px}h1{font-size:34px}.top{align-items:flex-start;flex-direction:column}.steps{grid-template-columns:1fr}.step:not(:last-child):after{display:none}.step{display:grid;grid-template-columns:45px 1fr;gap:8px}.step .n{grid-row:1/5}.step h3,.step p,.step .role{grid-column:2}.step p{margin:0}.split,.gate,.four,.checks{grid-template-columns:1fr}.split article+article{border-left:0;border-top:1px solid var(--line)}.result{padding:20px 0 0;border-left:0;border-top:1px solid var(--line)}.section-head{display:block}.section-head small{display:block;margin-top:6px}nav{gap:16px}footer{flex-direction:column}}
+@media print{.styles,nav,select{display:none}.shell{max-width:none;padding:15px}body{--bg:#fff;--paper:#fff;--ink:#222;--muted:#555;--line:#bbb;--accent:#345;--soft:#eee}section{break-inside:avoid}h1{font-size:30px}}
+</style>
+</head>
+<body data-theme="dark">
+<!-- 初稿假设：内部流程说明；不是自动分析工具。不改 skill 或工作簿。A/B/C 为同内容的轻量视觉方向，待用户选择。 -->
+<main class="shell">
+<div class="top"><span class="label">Weekly video review / 工作流程</span><div class="styles" aria-label="初稿样式"><a href="index.html" data-style="paper">A · 纸本手册</a><a href="blue.html" data-style="blue">B · 蓝色工作台</a><a href="dark.html" data-style="dark">C · 深色演示</a></div></div>
+<header><div><span class="label">Skill 梳理 · 初稿 / 2026.09.28</span><h1>从一份周表，<br>到可执行的视觉结论。</h1><p class="intro">先用指标定位问题，再用图片核实原因。<br>保留有效素材，把需要改的部分说清楚。</p></div><div class="promise"><strong>原因讲充分，执行写简约。</strong><p>场景只写「大概场景＋色调」。保留必要的商品展示点，不替设计师写门窗、桌椅和布景清单。</p></div></header>
+<nav aria-label="内容导航"><a href="#workflow">01 制作流程</a><a href="#roles">02 两个 Skill 的分工</a><a href="#decision">03 优化判断</a><a href="#writing">04 填写标准</a><a href="#checks">05 交付检查</a></nav>
+<section id="workflow"><div class="section-head"><h2>01 / 每周如何制作</h2><small>最新文件 → 指定周次 → 新版本交付</small></div><div class="steps">
+<article class="step"><span class="n">01</span><span class="role">你 · 准备</span><h3>补图并提交周表</h3><p>当前素材前5秒截图、优秀参考图、运营备注；注明本次分析日期。</p></article>
+<article class="step"><span class="n">02</span><span class="role">先确认范围</span><h3>锁定本周业务行</h3><p>只看第一个 sheet。按日期、广告与SKC配行，按多行表头识别字段。</p></article>
+<article class="step"><span class="n">03</span><span class="role">Skill 1 · 有缺失才补</span><h3>补齐指标与标绿</h3><p>七项当前指标映射，六项效率指标对比。确认基准口径，不自行重算基准。</p></article>
+<article class="step"><span class="n">04</span><span class="role">Skill 2 · 核心分析</span><h3>逐行核实与填写</h3><p>运营备注 → 当前图片 → 对应参考 → 指标交叉判断，分别写原因和执行结论。</p></article>
+<article class="step"><span class="n">05</span><span class="role">检查后交付</span><h3>输出新版本表格</h3><p>核对修改范围、图片、公式与文字显示。原文件及其他日期内容保留。</p></article>
+</div></section>
+<section id="roles"><div class="section-head"><h2>02 / 两个 Skill，不做同一件事</h2></div><div class="split"><article><span class="col">数据准备</span><h3>指标对比</h3><code>weekly-video-metric-comparison</code><ul><li>花费、CPC、点击率、转化率、ACOS、5秒观看率、完播率。</li><li>显示当前值，不写涨跌幅；花费不判优劣。</li><li>六项指标按已确认基准标绿，不写视觉判断。</li></ul></article><article><span class="col">分析与行动</span><h3>数据诊断＋视觉分析</h3><code>weekly-video-metric-comparison-2</code><ul><li>数据原因与结论：哪里弱，接下来核查什么。</li><li>视觉原因与结论：画面证据是什么，需要改什么。</li><li>已完成指标时可直接进入；无截图也可做数据诊断。</li></ul></article></div><p class="examples-label">列字母会随表格变化，以实际表头为准；历史 DD/DE 或当前 DN/DO 都不是固定字段。</p></section>
+<section id="decision"><div class="section-head"><h2>03 / 先判断要不要改，再决定怎么改</h2><small>切换典型情况，查看处理分支</small></div><div class="gate"><div><label for="scenario">当前这一行属于哪种情况？</label><select id="scenario"><option value="good">CPC、点击及两项观看都好</option><option value="view">点击好，但观看偏弱</option><option value="convert">点击与观看好，但转化偏弱</option><option value="all">六项效率指标都偏弱</option><option value="error">表现好，但发现色差或结构问题</option><option value="missing">缺少当前截图 / 图片归属不明</option></select><div class="flow-line">指标定位 → 图片核实 → 有限度的动作</div></div><div class="result" aria-live="polite"><h3 id="decision-title">优先保留，不强制优化</h3><p id="decision-body">确认没有商品错误或必须修正的问题后，建议暂不优化。转化和ACOS若仍偏弱，单独排查流量与商品页承接。</p><p id="decision-output">（1）CPC、点击率、5秒观看率和完播率表现良好，建议暂不优化，保留现有素材。</p></div></div><p class="examples-label">标绿表示相对已确认基准较好，不代表所有问题都已排除；静态截图与指标不能证明因果。</p></section>
+<section id="writing"><div class="section-head"><h2>04 / 四个字段，各写各的</h2><small>以下为写法示例，不对应本周某一行的实际结论</small></div><div class="four">
+<article class="cell"><span class="col">数据分析原因</span><h3>关键指标＋问题环节</h3><small>通常45–100字，说明判断依据。</small><div class="example">转化率和ACOS较好，但点击率及两项观看低于基准。已点击人群有购买表现，需优先核查引流与观看环节，不直接认定为场景问题。</div></article>
+<article class="cell"><span class="col">数据分析结论</span><h3>保留什么＋验证什么</h3><small>按实际情况分点，不硬凑三条。</small><div class="example">（1）保留有效商品表达，测试更清晰的开场。
+（2）结合搜索词与点击人群，观察观看和转化变化。</div></article>
+<article class="cell"><span class="col">视觉分析原因</span><h3>指标表现＋可见画面证据</h3><small>通常60–110字，分清已观察事实与待验证推断。</small><div class="example">当前两图景别接近，第二图主要增加扶眼镜姿态，商品细节增加有限。参考第一组由完整裙型切至腰臀，展示信息更明确，可借鉴景别变化，不能据此断定背景导致低效。</div></article>
+<article class="cell"><span class="col">视觉分析结论 / 执行动作</span><h3>场景＋色调＋展示重点</h3><small>通常40–80字；只写必要动作。</small><div class="example">（1）测试有生活气息的纽约街头咖啡店场景，以灰米色、木色为主。
+（2）第一分镜展示完整裙型；第二分镜展示腰臀花纹与垂感。</div></article>
+</div><p class="examples-label">纽约街头仅为示例，不是统一模板。按款式、推广季节及已有效的素材选择场景。</p></section>
+<section id="checks"><div class="section-head"><h2>05 / 交付前的三道检查</h2></div><div class="checks"><article><h3>范围没有扩大</h3><p>只改指定周次和授权字段。默认填空；明确要求修订时再改已有文案。保护人工保留项。</p></article><article><h3>判断有证据</h3><p>图片与行对应；色准用同SKC标准；缺图不编造，不把两张截图解释成全片节奏。</p></article><article><h3>表格没有损坏</h3><p>重开验证文字、公式与图片，比较非目标内容。新版本保存，不覆盖原文件。</p></article></div></section>
+<section><div class="section-head"><h2>梳理发现：哪些规则还需写回 Skill</h2><small>待确认 · 本次尚未修改 skill 文件</small></div>
+<details open><summary>把「具体场景」限制为「大方向＋色调」</summary><p>现有文件要求具体场景和动作，但未禁止布景清单。建议补充：不写门窗、桌椅、行人位置等微观设计，交给设计师选景。</p></details>
+<details><summary>分点数量灵活，不优化只写一条</summary><p>明确写入：用（1）（2）按需分点，不固定三条。不需要优化时列出表现良好的指标，并写“建议暂不优化，保留现有素材”。商品真实性问题仍单独修正。</p></details>
+<details><summary>两分镜只用于确实需要调整的素材</summary><p>现有 skill 默认要求两个分镜，应补充例外：保留素材、仅校色或待核实问题时，不强行新增分镜。需要改分镜时说明两个不同的商品展示点。</p></details>
+<details><summary>固定“半年”的基准表述，需要增加口径冲突检查</summary><p>指标 skill 仍描述半年基准，而实际周表可能包含近30天或近90天字段。建议写入：先核对表头与数据期间，发现冲突先确认，不把不同期间默认当作同一基准。</p></details>
+</section>
+<div class="source"><p>整理依据：两个 Skill 的现有说明、Skill 2 的 analysis-rules.md，以及本任务中你确认的简约版要求。</p><p>范围假设：用于你与设计师理解每周制作流程；本页面仅作说明，不读取或自动修改工作簿。三个初稿内容相同，只比较视觉呈现。</p></div>
+<footer><span>先把问题判断准，再把动作写简单。</span><span>流程初稿 · 等待确认</span></footer>
+</main>
+<script>
+const cases={
+good:['优先保留，不强制优化','确认没有商品错误或必须修正的问题后，建议暂不优化。转化和ACOS若仍偏弱，单独排查流量与商品页承接。','（1）CPC、点击率、5秒观看率和完播率表现良好，建议暂不优化，保留现有素材。'],
+view:['保留吸引力，核查观看展示','查看当前两图是否重复、第二分镜是否增加商品信息。不能仅凭低完播断言视频节奏慢。','可调整分镜的信息递进，不自动要求换景或重做整条视频。'],
+convert:['优先核查购买环节','核对流量、价格、商品页与素材的一致性；有可见商品问题再做局部修正。','不要因为转化弱，直接推翻已有较好的点击与观看表达。'],
+all:['先定位主要问题，小范围测试','先核对投放条件、商品真实性和画面展示。选择证据最明确的问题，不同时改所有变量。','以场景或开场为一个测试方向，保持真实花色、版型和必要细节。'],
+error:['只修正商品问题，保留有效结构','先按同SKC实物或确认商品图核实。异色参考可借鉴展示，不能拿来校色。','仅校准颜色、花纹或结构，不因为修色而强制换场景。'],
+missing:['保留视觉栏，标记待核对','当前截图缺失或归属不明时，不新增图片支持的诊断；可以继续数据分析。只有参考图缺失时，可分析当前图但不声称做过对比。','列明缺失行和所需图片，不以推测补齐视觉原因。']};
+const picker=document.getElementById('scenario');picker.addEventListener('change',()=>{const data=cases[picker.value];['decision-title','decision-body','decision-output'].forEach((id,i)=>document.getElementById(id).textContent=data[i]);});
+document.querySelector(`[data-style="${document.body.dataset.theme}"]`).setAttribute('aria-current','page');
+</script>
+</body></html>
